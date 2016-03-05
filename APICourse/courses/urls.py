@@ -29,3 +29,7 @@ urlpatterns = format_suffix_patterns([
     url(r'^users/', user_list, name = 'user_list'),
     url(r'^users/(?P<pk>[0-9]+)/$', user_detail, name = 'user_detail'),
 ])
+
+urlpatterns += [
+    url(r'^api-auth/', include('rest_framework.urls', namespace = 'rest_framework')),
+]
